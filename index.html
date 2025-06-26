@@ -50,7 +50,6 @@
     .resume-button:hover {
       background: #e3f2fd;
     }
-
     nav {
       background: white;
       position: sticky;
@@ -73,13 +72,11 @@
       color: #1976d2;
       border-bottom: 2px solid #1976d2;
     }
-
     main {
       padding: 40px 20px 60px;
       max-width: 900px;
       margin: auto;
     }
-
     section {
       margin-bottom: 50px;
     }
@@ -98,12 +95,9 @@
     ul {
       padding-left: 20px;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
-    /* Small devices */
     @media (max-width: 600px) {
       header h1 {
         font-size: 2.2rem;
@@ -118,9 +112,7 @@
     }
   </style>
 </head>
-
 <body>
-
   <header>
     <h1>Pazhanivel Kaliyamoorthy</h1>
     <p>
@@ -129,10 +121,9 @@
       <a href="https://linkedin.com/in/pazhanivel-kaliyamoorthy" target="_blank">LinkedIn</a>
     </p>
     <a class="resume-button" href="https://pazhanivel-kaliyamoorthy.github.io/pazhanivel_resume.pdf" target="_blank">
-     Download Resume
+      Download Resume
     </a>
   </header>
-
   <nav id="navbar">
     <a href="#objective">Objective</a>
     <a href="#experience">Experience</a>
@@ -142,41 +133,55 @@
     <a href="#certificates">Certificates</a>
     <a href="#achievements">Achievements</a>
   </nav>
-
   <main>
     <section id="objective">
       <h2>Objective</h2>
-      <p>An Enthusiastic Web Developer who loves to build things over the internet using cutting-edge techs and contribute to the community which backs him. Believes in "Solve Together!"</p>
+      <p>Frontend Engineer with 3+ years of experience building performant, user-friendly web applications using modern JavaScript frameworks. Proven track record of delivering scalable UIs and collaborating cross-functionally in fast-paced product teams. Passionate about code quality, developer experience, and community-driven development.</p>
     </section>
-
     <section id="experience">
       <h2>Experience</h2>
       <ul>
-        <li><strong>Software Development Engineer II - Jio Platform Limited (Feb 2023 – Present)</strong><br> Developed front-end for Campaign Management System, Inventory dashboards, Integrated InsightsAI chatbot.</li>
-        <li><strong>Software Engineer - Frontend - BYJU's (Feb 2022 – Nov 2022)</strong><br> Developed new initiatives, critical sprint deliverables, frontend unit test cases.</li>
-        <li><strong>Software Engineer Intern - BYJU's (Aug 2021 – Feb 2022)</strong><br> Upgraded Webpack, error documentation, Monthly Progress Reports, POCs.</li>
+        <li><strong>Software Development Engineer II – Jio Platform Limited (Feb 2023 – Present)</strong>
+          <ul>
+            <li>Led development of front-end interfaces for a Campaign Management System, improving push campaign management efficiency across devices.</li>
+            <li>Built and maintained dashboards for a Real-Time Unified Inventory Management System, enabling smooth tracking of inventory levels and product data.</li>
+            <li>Integrated InsightsAI—an AI-powered chatbot—into the EYE App for natural language-based report generation with support for both predefined and custom reports.</li>
+            <li>Developed a centralized Inventory Planning Tool (IPT) serving as the enterprise hub for forecasting and replenishment. Implemented baseline forecast visualizations across product families and enabled consensus input capture for Sales Targets, KVIs, and NPIs. Established forecast finalization workflows to improve organization-wide inventory alignment.</li>
+          </ul>
+        </li>
+        <li><strong>Software Engineer – Frontend – BYJU’s (Feb 2022 – Nov 2022)</strong>
+          <ul>
+            <li>Contributed to BYJU’s Classes Teacher Tech Platform, delivering high-impact features and maintaining the front-end codebase.</li>
+            <li>Owned and delivered multiple critical sprint items with zero or minimal bugs, improving reliability and release velocity.</li>
+            <li>Implemented frontend unit tests to improve code coverage and system stability.</li>
+          </ul>
+        </li>
+        <li><strong>Software Engineer – Intern – BYJU’s (Aug 2021 – Feb 2022)</strong>
+          <ul>
+            <li>Independently upgraded Webpack version in the BYJU’s Classes project, improving build performance and maintainability.</li>
+            <li>Authored a detailed Error Flow Document to assist the support team in troubleshooting frequent frontend issues.</li>
+            <li>Contributed to the Monthly Progress Report feature and developed POCs for core UI visualizations.</li>
+            <li>Created a standardized Pull Request checklist template to streamline the review process.</li>
+          </ul>
+        </li>
       </ul>
     </section>
-
     <section id="education">
       <h2>Education</h2>
       <p><strong>Bachelor of Technology - Pondicherry University</strong><br> Aug 2016 – Sept 2020 | GPA: 8.2<br> Computer Science and Engineering</p>
     </section>
-
     <section id="skills">
       <h2>Skills</h2>
-      <p>ReactJS, HTML, CSS, JavaScript, ES6, Redux, SCSS, CSS-IN-JS, Material UI, GIT, Azure, JIRA, Jest, VS Code, Chrome Dev Tools, NodeJS, GitHub, PDF Kit, SVG, Java, C.</p>
+      <p>ReactJS, JavaScript (ES6+), HTML5, CSS3, Redux, SCSS, Material UI, CSS-in-JS, Git, Webpack, Azure DevOps, JIRA, Chrome DevTools, VS Code, Node.js, PDFKit, SVG, Java, C.</p>
     </section>
-
     <section id="awards">
       <h2>Awards</h2>
       <ul>
-        <li>Spotlight Award (Aug 2024)</li>
-        <li>Best Team Award (2024-2025)</li>
-        <li>Tech X Award (2022)</li>
+        <li>Spotlight Award (Aug 2024): Recognized for exceptional performance and contribution.</li>
+        <li>Best Team Award (2024–2025): Awarded for Campaign Management Team success.</li>
+        <li>Tech X Award (2022): Recognized for innovation and excellence in Tutor Management.</li>
       </ul>
     </section>
-
     <section id="certificates">
       <h2>Certificates</h2>
       <ul>
@@ -185,20 +190,17 @@
         <li>Node.js Essential Training - LinkedIn Learning</li>
       </ul>
     </section>
-
     <section id="achievements">
       <h2>Achievements</h2>
       <ul>
-        <li>Cyber Security Workshop - TACW College</li>
-        <li>Internet of Things Workshop - LANSA Informatics Pvt. Ltd.</li>
+        <li>Cyber Security Workshop – TACW College</li>
+        <li>Internet of Things Workshop – LANSA Informatics Pvt. Ltd.</li>
       </ul>
     </section>
   </main>
-
   <script>
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
-
     window.addEventListener("scroll", () => {
       let current = "";
       sections.forEach(section => {
@@ -215,6 +217,5 @@
       });
     });
   </script>
-
 </body>
 </html>
