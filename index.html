@@ -1,226 +1,814 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pazhanivel Kaliyamoorthy Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pazhanivel Kaliyamoorthy | Frontend Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9fafb;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header {
-      text-align: center;
-      padding: 50px 20px 30px;
-      background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0f172a;
+      --text: #475569;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 8px;
-    }
-    header p {
-      font-size: 1.1rem;
-      margin-bottom: 18px;
-    }
-    header a {
-      color: #1976d2;
-      text-decoration: none;
-      margin: 0 8px;
-      font-weight: 500;
-    }
-    header a:hover {
-      text-decoration: underline;
-    }
-    .resume-button {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid #1976d2;
-      color: #1976d2;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: 0.3s;
-      margin-top: 10px;
-    }
-    .resume-button:hover {
-      background: #e3f2fd;
-    }
-    nav {
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    }
-    nav a {
-      display: inline-block;
-      padding: 12px 16px;
-      font-weight: 600;
-      text-decoration: none;
-      color: #555;
-      transition: 0.3s;
-      font-size: 1rem;
-    }
-    nav a:hover, nav a.active {
-      color: #1976d2;
-      border-bottom: 2px solid #1976d2;
-    }
-    main {
-      padding: 40px 20px 60px;
-      max-width: 900px;
-      margin: auto;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    section h2 {
-      color: #1976d2;
-      margin-bottom: 15px;
-      font-size: 1.8rem;
-      border-left: 4px solid #1976d2;
-      padding-left: 10px;
-    }
-    section p, section ul, section li {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin: 8px 0;
-    }
-    ul {
-      padding-left: 20px;
-    }
+
     html {
       scroll-behavior: smooth;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f1f5f9;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 16px 20px;
+    }
+
+    nav a {
+      color: var(--secondary);
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0%;
+      height: 2px;
+      background: var(--primary);
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+      background: var(--gradient);
+      color: white;
+      padding: 90px 20px 80px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3.8rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .hero-text h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 22px;
+      opacity: 0.95;
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin-bottom: 32px;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      padding: 13px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #e0e7ff;
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .contact-info a {
+      color: white;
+    }
+
+    /* HERO CARD */
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      margin-bottom: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✔";
+      color: #bfdbfe;
+      font-weight: bold;
+    }
+
+    /* MAIN */
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    section {
+      margin-bottom: 70px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 28px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 65%;
+      height: 4px;
+      border-radius: 10px;
+      background: var(--gradient);
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* EXPERIENCE */
+
+    .experience-item {
+      margin-bottom: 40px;
+    }
+
+    .experience-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-item h3 {
+      color: var(--secondary);
+      margin-bottom: 4px;
+      font-size: 1.2rem;
+    }
+
+    .company {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .experience-item ul {
+      padding-left: 20px;
+    }
+
+    .experience-item li {
+      margin-bottom: 10px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .skill-box {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-box h4 {
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: #eff6ff;
+      color: var(--primary-dark);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* ACHIEVEMENTS */
+
+    .achievement-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .achievement {
+      background: white;
+      padding: 22px;
+      border-left: 5px solid var(--primary);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--secondary);
+      color: white;
+      margin-top: 50px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
       }
-      nav {
-        flex-wrap: wrap;
+
+      .hero-text h1 {
+        font-size: 3rem;
       }
-      nav a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
+    }
+
+    @media(max-width: 600px) {
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero-text h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero-text h2 {
+        font-size: 1.1rem;
+      }
+
+      .section-title {
+        font-size: 1.7rem;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-container {
+        gap: 14px;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Pazhanivel Kaliyamoorthy</h1>
-    <p>
-      Bangalore, India |
-      <a href="mailto:pazhanivel2806@gmail.com">pazhanivel2806@gmail.com</a> |
-      <a href="https://linkedin.com/in/pazhanivel-kaliyamoorthy" target="_blank">LinkedIn</a>
-    </p>
-    <a class="resume-button" href="https://pazhanivel-kaliyamoorthy.github.io/pazhanivel_resume.pdf" target="_blank">
-      Download Resume
-    </a>
-  </header>
-  <nav id="navbar">
-    <a href="#objective">Objective</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#awards">Awards</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#achievements">Achievements</a>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="nav-container">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
+      <a href="#achievements">Achievements</a>
+    </div>
   </nav>
-  <main>
-    <section id="objective">
-      <h2>Objective</h2>
-      <p>Frontend Engineer with 3+ years of experience building performant, user-friendly web applications using React.js and JavaScript. Proven ability to deliver scalable UIs and collaborate effectively with cross-functional teams in fast-paced environments.</p>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-text">
+
+        <h1>Pazhanivel Kaliyamoorthy</h1>
+
+        <h2>
+          Frontend Engineer • React.js Developer • AI-Assisted Developer
+        </h2>
+
+        <p>
+          Frontend Engineer with 4+ years of experience building scalable,
+          high-performance web applications using React.js, JavaScript,
+          Node.js, and modern frontend technologies. Experienced in developing
+          enterprise-grade products, AI-powered applications, and real-time systems
+          while collaborating with cross-functional teams in fast-paced environments.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a class="btn btn-primary"
+            href="https://pazhanivel-kaliyamoorthy.github.io/pazhanivel_resume.pdf"
+            target="_blank">
+            Download Resume
+          </a>
+
+          <a class="btn btn-outline"
+            href="https://linkedin.com/in/pazhanivel-kaliyamoorthy"
+            target="_blank">
+            LinkedIn Profile
+          </a>
+
+        </div>
+
+        <div class="contact-info">
+          <span>📍 Bangalore, India</span>
+
+          <a href="mailto:pazhanivel2806@gmail.com">
+            ✉ pazhanivel2806@gmail.com
+          </a>
+        </div>
+
+      </div>
+
+      <!-- HERO CARD -->
+
+      <div class="hero-card">
+
+        <h3>Professional Highlights</h3>
+
+        <ul>
+          <li>4+ Years of Software Engineering Experience</li>
+          <li>Expertise in React.js, JavaScript & Node.js</li>
+          <li>Using Claude & Cursor for AI-assisted development workflows</li>
+          <li>Built Enterprise Inventory & Campaign Systems</li>
+          <li>Experience with Real-time Event-driven Architectures</li>
+          <li>Hackathon Winner for Open-source AI Project</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="container">
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <h2 class="section-title">About Me</h2>
+
+      <div class="card">
+
+        <p>
+          I specialize in building scalable, modern, and user-friendly web applications
+          using React.js and JavaScript ecosystems. Over the last 4+ years, I’ve worked on
+          enterprise platforms across inventory management, campaign systems,
+          education technology, and AI-powered analytics products.
+        </p>
+
+        <br>
+
+        <p>
+          I actively use AI-assisted development tools like Claude and Cursor to improve
+          engineering productivity, accelerate debugging, optimize development workflows,
+          and deliver high-quality features faster. I enjoy solving complex frontend
+          challenges, designing maintainable architectures, and creating intuitive user experiences.
+        </p>
+
+      </div>
+
     </section>
+
+    <!-- EXPERIENCE -->
+
     <section id="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>Software Development Engineer II – Jio Platform Limited (Feb 2023 – Present)</strong>
+
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="card">
+
+        <!-- JIO -->
+
+        <div class="experience-item">
+
+          <h3>Software Development Engineer II</h3>
+
+          <p class="company">
+            Jio Platforms Limited • Feb 2023 – Present
+          </p>
+
           <ul>
-            <li>Led front-end development of a Campaign Management System, improving push notification workflows with limited deals, banner ads, and user segmentation.</li>
-            <li>Built and maintained dashboards for a Real-Time Unified Inventory Management System, enabling smooth tracking of inventory levels and product data.</li>
-            <li>Integrated InsightsAI—an AI-powered chatbot—into the EYE App for natural language-based report generation.</li>
-            <li>Developed a centralized Inventory Planning Tool (IPT) serving as the enterprise hub for forecasting and replenishment, including baseline forecast visualizations and consensus input for Sales Targets, KVIs, and NPIs.</li>
-            <li>Built Node.js service to consume real-time events from Azure Event Hub and update Fynd platform via APIs, with retry logic and logging.</li>
-            <li>Developed Product Selector and Lead Management features in OneApp, enhancing engagement through auto-filled data and role-based access.</li>
+
+            <li>
+              Led frontend development for a large-scale Campaign Management System
+              improving notification workflows, user targeting, and promotional campaigns.
+            </li>
+
+            <li>
+              Built dashboards and visualization tools for a Real-Time Unified Inventory
+              Management platform used across enterprise operations.
+            </li>
+
+            <li>
+              Integrated AI-powered chatbot capabilities into reporting systems
+              enabling natural language-based insights generation.
+            </li>
+
+            <li>
+              Developed Inventory Planning Tool (IPT) with forecasting,
+              replenishment planning, and business KPI visualizations.
+            </li>
+
+            <li>
+              Built Node.js microservices to consume Azure Event Hub events
+              and synchronize data with external platforms.
+            </li>
+
+            <li>
+              Leveraged AI-powered developer tools such as Claude and Cursor
+              to accelerate feature development, debugging, refactoring,
+              and engineering productivity across projects.
+            </li>
+
+            <li>
+              Improved user engagement by implementing Product Selector and
+              Lead Management modules with role-based access.
+            </li>
+
           </ul>
-        </li>
-        <li><strong>Software Engineer – Frontend – BYJU’s (Feb 2022 – Nov 2022)</strong>
+
+        </div>
+
+        <!-- BYJUS -->
+
+        <div class="experience-item">
+
+          <h3>Software Engineer – Frontend</h3>
+
+          <p class="company">
+            BYJU’S • Feb 2022 – Nov 2022
+          </p>
+
           <ul>
-            <li>Contributed to BYJU’s Classes Teacher Tech Platform, delivering high-impact features and maintaining the front-end codebase.</li>
-            <li>Delivered critical sprint items with minimal bugs, boosting reliability and release velocity.</li>
-            <li>Implemented frontend unit tests to improve code coverage and system stability.</li>
+
+            <li>
+              Contributed to Teacher Tech Platform delivering scalable
+              frontend solutions and high-impact features.
+            </li>
+
+            <li>
+              Improved application reliability with frontend unit testing
+              and bug-free sprint delivery.
+            </li>
+
+            <li>
+              Collaborated closely with product and engineering teams
+              in agile development environments.
+            </li>
+
           </ul>
-        </li>
-        <li><strong>Software Engineer – Intern – BYJU’s (Aug 2021 – Feb 2022)</strong>
+
+        </div>
+
+        <!-- INTERN -->
+
+        <div class="experience-item">
+
+          <h3>Software Engineer Intern</h3>
+
+          <p class="company">
+            BYJU’S • Aug 2021 – Feb 2022
+          </p>
+
           <ul>
-            <li>Upgraded Webpack version, improving build performance and maintainability.</li>
-            <li>Authored a detailed Error Flow Document for the support team.</li>
-            <li>Contributed to Monthly Progress Report and developed POCs for UI visualizations.</li>
-            <li>Created PR checklist template to streamline code review process.</li>
+
+            <li>
+              Upgraded Webpack configurations improving build performance.
+            </li>
+
+            <li>
+              Created internal documentation and debugging workflows.
+            </li>
+
+            <li>
+              Developed UI visualization POCs and engineering utilities.
+            </li>
+
+            <li>
+              Improved PR review process through reusable checklists.
+            </li>
+
           </ul>
-        </li>
-      </ul>
+
+        </div>
+
+      </div>
+
     </section>
-    <section id="education">
-      <h2>Education</h2>
-      <p><strong>Bachelor of Technology - Pondicherry University</strong><br> Aug 2016 – Sept 2020 | GPA: 8.2<br> Computer Science and Engineering</p>
-    </section>
+
+    <!-- SKILLS -->
+
     <section id="skills">
-      <h2>Skills</h2>
-      <p><strong>Front-End:</strong> ReactJS, JavaScript (ES6+), HTML5, CSS3, Redux, SCSS, Material UI, CSS-in-JS, Webpack<br>
-         <strong>Back-End:</strong> Node.js, MongoDB, SQL, Kubernetes, RESTful APIs, Redis<br>
-         <strong>Tools:</strong> Git, Azure DevOps, JIRA, Chrome DevTools, VS Code, PDFKit, SVG, Debugging, Troubleshooting</p>
+
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-box">
+
+          <h4>Frontend</h4>
+
+          <div class="tags">
+            <span class="tag">React.js</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Redux</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">SCSS</span>
+            <span class="tag">Material UI</span>
+          </div>
+
+        </div>
+
+        <div class="skill-box">
+
+          <h4>Backend & APIs</h4>
+
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Redis</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Kubernetes</span>
+          </div>
+
+        </div>
+
+        <div class="skill-box">
+
+          <h4>AI Tools & Platforms</h4>
+
+          <div class="tags">
+            <span class="tag">Claude AI</span>
+            <span class="tag">Cursor AI</span>
+            <span class="tag">AI-assisted Development</span>
+            <span class="tag">Azure DevOps</span>
+            <span class="tag">Git</span>
+            <span class="tag">Webpack</span>
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+      <h2 class="section-title">Education</h2>
+
+      <div class="card">
+
+        <h3>Bachelor of Technology</h3>
+
+        <p>
+          <strong>Pondicherry University</strong><br>
+          Computer Science and Engineering<br>
+          Aug 2016 – Sept 2020<br>
+          GPA: 8.2
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- AWARDS -->
+
     <section id="awards">
-      <h2>Awards</h2>
-      <ul>
-        <li>Spotlight Award (Aug 2024): Recognized for exceptional performance and dedication.</li>
-        <li>Best Team Award (2024–2025): Honored as part of Campaign Management Team for success in execution and outcomes.</li>
-        <li>Tech X Award (2022): Awarded for innovation and excellence in Tutor Management.</li>
-      </ul>
+
+      <h2 class="section-title">Awards & Recognition</h2>
+
+      <div class="achievement-list">
+
+        <div class="achievement">
+          <strong>Spotlight Award – 2024</strong><br>
+          Recognized for exceptional ownership and engineering contribution.
+        </div>
+
+        <div class="achievement">
+          <strong>Best Team Award – 2024-2025</strong><br>
+          Awarded for successful execution and delivery excellence in Campaign Management.
+        </div>
+
+        <div class="achievement">
+          <strong>Tech X Award – 2022</strong><br>
+          Recognized for innovation and contribution to Tutor Management systems.
+        </div>
+
+      </div>
+
     </section>
-    <section id="certificates">
-      <h2>Certificates</h2>
-      <ul>
-        <li>JavaScript (Basic) - HackerRank</li>
-        <li>Java (Intermediate) - HackerRank</li>
-        <li>Node.js Essential Training - LinkedIn Learning</li>
-      </ul>
-    </section>
+
+    <!-- ACHIEVEMENTS -->
+
     <section id="achievements">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Winner - InnovateX Hackathon (2024): Built "Lumina", an open-source LLM-powered chatbot with multi-model support.</li>
-        <li>Cyber Security Workshop – TACW College</li>
-        <li>Internet of Things Workshop – LANSA Informatics Pvt. Ltd.</li>
-      </ul>
+
+      <h2 class="section-title">Achievements & Certifications</h2>
+
+      <div class="achievement-list">
+
+        <div class="achievement">
+          <strong>Winner – InnovateX Hackathon 2024</strong><br>
+          Built “Lumina”, an open-source multi-model AI chatbot platform.
+        </div>
+
+        <div class="achievement">
+          <strong>Certifications</strong><br>
+          JavaScript (Basic) – HackerRank<br>
+          Java (Intermediate) – HackerRank<br>
+          Node.js Essential Training – LinkedIn Learning
+        </div>
+
+        <div class="achievement">
+          <strong>Workshops</strong><br>
+          Cyber Security Workshop – TACW College<br>
+          Internet of Things Workshop – LANSA Informatics Pvt. Ltd.
+        </div>
+
+      </div>
+
     </section>
+
   </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © 2026 Pazhanivel Kaliyamoorthy • Frontend Engineer Portfolio
+    </p>
+  </footer>
+
+  <!-- ACTIVE NAVIGATION -->
+
   <script>
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
+
     window.addEventListener("scroll", () => {
+
       let current = "";
+
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
+
+        const sectionTop = section.offsetTop - 120;
+
+        if (window.pageYOffset >= sectionTop) {
           current = section.getAttribute("id");
         }
       });
+
       navLinks.forEach(link => {
+
         link.classList.remove("active");
+
         if (link.getAttribute("href") === "#" + current) {
           link.classList.add("active");
         }
+
       });
+
     });
   </script>
+
 </body>
+
 </html>
